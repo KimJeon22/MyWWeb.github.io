@@ -56,10 +56,10 @@
     <div class="container">
         <h1>WebXR Connector1</h1>
         <button id="myButton" onclick="handleClick1()">클릭하세요!</button>
-        <div id="message"></div>
+        <div id="message1"></div>
         <h1>WebXR Connector2</h1>
         <button id="myButton" onclick="handleClick2()">클릭하세요!</button>
-        <div id="message"></div>
+        <div id="message2"></div>
     </div>
 
     <script>
@@ -67,19 +67,29 @@
 
         function handleClick1() {
             
-            location.href = 'com.raon.XRTest://open';
-            
-            console.log("click");
+              const message = document.getElementById('message1');
+    
+            // 방법 2: Intent URL 형식
+            const intentUrl = 'intent://open#Intent;' +
+                              'scheme=com.raon.XRTest;' +
+                            'package=com.raon.XRTest;' +
+                            'end;';
+    
+            message.textContent = '실행 중...';
+            window.location.href = intentUrl;
 
             // 버튼 색상 변경 효과
             const button = document.getElementById('myButton');
             button.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
         }
         function handleClick2() {
+            const message = document.getElementById('message2');
             
-            location.href = "intent://byunhost#Intent;scheme=byunscheme;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.raon.XRTest;end";
-            
-            console.log("click");
+
+            const deepLink = 'com.raon.XRTest://open';
+    
+            message.textContent = '실행 중...';
+            window.location.href = deepLink;
 
             // 버튼 색상 변경 효과
             const button = document.getElementById('myButton');
