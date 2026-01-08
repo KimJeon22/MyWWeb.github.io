@@ -54,17 +54,31 @@
     <div id="app"></div>
 
     <div class="container">
-        <h1>WebXR Connector</h1>
-        <button id="myButton" onclick="handleClick()">클릭하세요!</button>
+        <h1>WebXR Connector1</h1>
+        <button id="myButton" onclick="handleClick1()">클릭하세요!</button>
+        <div id="message"></div>
+        <h1>WebXR Connector2</h1>
+        <button id="myButton" onclick="handleClick2()">클릭하세요!</button>
         <div id="message"></div>
     </div>
 
     <script>
         let clickCount = 0;
 
-        function handleClick() {
+        function handleClick1() {
             
-            location.href = 'com.raon.XRTest://open';            
+            location.href = 'com.raon.XRTest://open';
+            
+            console.log("click");
+
+            // 버튼 색상 변경 효과
+            const button = document.getElementById('myButton');
+            button.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        }
+        function handleClick2() {
+            
+            location.href = "intent://byunhost#Intent;scheme=byunscheme;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.raon.XRTest;end";
+            
             console.log("click");
 
             // 버튼 색상 변경 효과
