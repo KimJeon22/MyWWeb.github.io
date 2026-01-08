@@ -63,12 +63,8 @@
         let clickCount = 0;
 
         function handleClick() {
-            clickCount++;
-            const messageDiv = document.getElementById('message');
-            messageDiv.textContent = `버튼이 ${clickCount}번 클릭되었습니다!`;
-
-            // 콘솔에도 로그 출력
-            console.log('버튼 클릭 이벤트 발생! 클릭 횟수:', clickCount);
+            window.location.href = 'com.raon.XRTest://open';            
+            console.log("click");
 
             // 버튼 색상 변경 효과
             const button = document.getElementById('myButton');
